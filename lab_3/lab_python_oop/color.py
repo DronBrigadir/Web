@@ -3,9 +3,9 @@ class Color:
         self.__color = None
 
     @property
-    def color(self):
+    def colorproperty(self):
         return self.__color
 
-    @color.setter
-    def color(self, value):
+    @colorproperty.setter
+    def colorproperty(self, value):
         self.__color = value
