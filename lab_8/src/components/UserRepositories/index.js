@@ -1,1 +1,3 @@
-export default from "./UserRepositories";
+import UserRepositories from "./UserRepositories";
+
+export default UserRepositories;

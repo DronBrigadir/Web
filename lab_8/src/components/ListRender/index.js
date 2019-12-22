@@ -1,1 +1,3 @@
-export default from "./ListRender";
+import ListRender from "./ListRender";
+
+export default ListRender;
