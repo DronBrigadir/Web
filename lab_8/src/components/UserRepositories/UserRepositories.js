@@ -11,7 +11,9 @@ class UserRepositories extends Component {
     componentDidMount() {
         let url = "https://api.github.com/users/" + this.props.userName + "/repos";
         axios.get(url).then(responce => {
-            let repNames = responce.data.map(item => item.name);
+            let repNames = responce.data.map(item => {
+                return {id: item.id, value: item.name}
+            });
             this.setState({repNames});
         })
     }
@@ -21,7 +23,11 @@ class UserRepositories extends Component {
         return (
             <div>
                 <h1>{this.props.userName} repositories:</h1>
-                <ListRender data={this.state.repNames} />
+                <ul>
+                    {this.state.repNames.map(item =>
+                        <ListRender key={item.id} item={item}/>
+                    )}
+                </ul>
             </div>
         );
     }

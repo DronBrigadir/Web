@@ -4,10 +4,9 @@ import './style.css';
 class ListRender extends Component {
 
     render() {
+        const {item} = this.props;
         return (
-            <ul>
-                {this.props.data.map(item => <li>{item}</li>)}
-            </ul>
+            <li>{item.value}</li>
         );
     }
 }
